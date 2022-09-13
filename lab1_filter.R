@@ -14,5 +14,8 @@ attach(EPI_data) 	# sets the ‘default’ object
 EPILand<-EPI[Landlock]
 Eland <- EPILand[!is.na(EPILand)]
 
+pna <- is.na(Population07)
+pop <- Population07[!pna]
+
 #hist(Population07)
-hist(Eland, seq(30., 95., 1.0), prob=TRUE)
+hist(as.numeric(pop))

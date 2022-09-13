@@ -17,9 +17,10 @@ qqline(x)
 
 #attach(EPI_data) 	# sets the ‘default’ object
 #fix(EPI_data) 	# launches a simple data editor
-#EPI 			# prints out values EPI_data$EPI
-#tf <- is.na(EPI) # records True values if the value is NA
-#E <- EPI[!tf] # filters out NA values, new array
+EPI 			# prints out values EPI_data$EPI
+tf <- is.na(EPI) # records True values if the value is NA
+E <- EPI[!tf] # filters out NA values, new array
+tf; E
 
 #other data
 #GRUMP_data <- read.csv("~/Documents/RStudio/DataAnalytics2022_Julian_Lioanag/GPW3_GRUMP_SummaryInformation_2010.csv")
