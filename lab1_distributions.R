@@ -14,13 +14,26 @@ help(distributions)
 # try different ones.....
 
 #Exercise 1
+E <- as.numeric(EPI)
+summary(E)
+fivenum(E, na.rm=TRUE)
+stem(E)
+hist(E)
+hist(E, seq(30., 95., 1.0), prob=TRUE)
+lines(density(E, na.rm=TRUE, bw=1.))
+
 help(qqplot)
 help(ecdf)
 
-plot(ecdf(DALY), do.points=FALSE, verticals=TRUE)
-qqplot(DALY, WATER_H, plot.it=TRUE, xlab="DALY", ylab="WATER_H")
+z <- seq(30, 95, 1)
+z
+
+plot(ecdf(as.numeric(DALY)), do.points=FALSE, verticals=TRUE)
+par(pty='s')
+qqnorm(E); qqline(E)
+qqplot(as.numeric(DALY), as.numeric(EPI), plot.it=TRUE, xlab="DALY", ylab="EPI")
 qqline(x)
-qqplot(PopulationDensity07, Population07, plot.it=TRUE, xlab="Density", ylab="Population count")
-qqplot(AIR_H, WATER_H, plot.it=TRUE, xlab="AIR_H", ylab="WATER_H")
+qqplot(as.numeric(PopulationDensity07), as.numeric(Population07), plot.it=TRUE, xlab="Density", ylab="Population count")
+qqplot(as.numeric(AIR_H), as.numeric(WATER_H), plot.it=TRUE, xlab="AIR_H", ylab="WATER_H")
 qqline(x)
-boxplot(EPI, DALY)
+boxplot(as.numeric(EPI), as.numeric(DALY))

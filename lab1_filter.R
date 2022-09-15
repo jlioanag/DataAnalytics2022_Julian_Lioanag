@@ -11,11 +11,20 @@ attach(EPI_data) 	# sets the ‘default’ object
 
 #Landlock
 
-EPILand<-EPI[Landlock]
+EPILand<-E[!as.numeric(Landlock)]
+EPILand
 Eland <- EPILand[!is.na(EPILand)]
+Eland
+hist(as.numeric(Eland))
 
 pna <- is.na(Population07)
 pop <- Population07[!pna]
 
-#hist(Population07)
+hist(as.numeric(Population07))
 hist(as.numeric(pop))
+fivenum(as.numeric(Population07))
+
+#Exercise 2
+EPI_regions
+noEU <- EPI_regions["Europe"]
+noEU
