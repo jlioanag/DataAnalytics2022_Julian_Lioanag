@@ -3,11 +3,11 @@ head(multivariate)
 attach(multivariate)
 help(lm)
 
-mm <- lm(Homeowners~Immigrants)
+mm <- lm(Homeowners ~ Immigrants)
 mm
 summary(mm)
 
-plot(Homeowners~Immigrants)
+plot(Homeowners ~ Immigrants)
 help(abline)
 abline(mm)
 abline(mm, col = 2, lwd = 3)
@@ -48,8 +48,8 @@ qplot(EPI_data$EPI_regions)
 qplot(factor(EPI_data$EPI_regions))
 EPI_R <- EPI_data$EPI_regions
 qplot(factor(EPI_R))
-ggplot(EPI_data, aes(x=factor(EPI_R))) + geom_bar()
+ggplot(EPI_data, aes(x = factor(EPI_R))) + geom_bar()
 
 hist(mtcars$mpg, breaks = 5)
-qplot(mpg, data=mtcars, binwidth=4)
-ggplot(mtcars, aes(x=mpg)) + geom_histogram(binwidth = 4)
+qplot(mpg, data = mtcars, binwidth = 4)
+ggplot(mtcars, aes(x = mpg)) + geom_histogram(binwidth = 4)
