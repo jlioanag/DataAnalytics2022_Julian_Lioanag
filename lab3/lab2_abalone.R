@@ -1,5 +1,5 @@
 # read data in
-aba<-read.csv(“abalone.csv")
+aba<-read.csv("abalone.csv")
 naba<-dim(aba)[1]
 #90% to train
 sampling.rate=0.9
