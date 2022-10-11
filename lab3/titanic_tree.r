@@ -9,3 +9,6 @@ pairs(Survived ~ ., data = Titanic, subset = Class, main = "Titanic data, Class"
 require(party)
 tit_ctree <- ctree(Survived ~ ., data = Titanic)
 plot(tit_ctree)
+
+tit_hclust <- hclust(dist(as.matrix(Titanic)))
+plot(tit_hclust)
