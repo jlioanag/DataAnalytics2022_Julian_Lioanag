@@ -1,4 +1,4 @@
-library(gdata) 
+library(gdata)
 #faster xls reader but requires perl!
 bronx1<-read.xls(file.choose(),pattern="BOROUGH",stringsAsFactors=FALSE,sheet=1,perl="<SOMEWHERE>/perl/bin/perl.exe") 
 bronx1<-bronx1[which(bronx1$GROSS.SQUARE.FEET!="0" & bronx1$LAND.SQUARE.FEET!="0" & bronx1$SALE.PRICE!="$0"),]
@@ -16,7 +16,7 @@ LAND.SQUARE.FEET<-as.numeric(gsub(",","", LAND.SQUARE.FEET))
 plot(log(GROSS.SQUARE.FEET), log(SALE.PRICE)) 
 m1<-lm(log(SALE.PRICE)~log(GROSS.SQUARE.FEET))
 summary(m1)
-abline(m1,col="red",lwd=2)
+abline(m1, col="red",lwd=2)
 plot(resid(m1))
 
 # Model 2
