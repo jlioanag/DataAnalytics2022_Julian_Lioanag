@@ -4,8 +4,8 @@ bronx1<-read.xls(file.choose(),pattern="BOROUGH",stringsAsFactors=FALSE,sheet=1,
 bronx1<-bronx1[which(bronx1$GROSS.SQUARE.FEET!="0" & bronx1$LAND.SQUARE.FEET!="0" & bronx1$SALE.PRICE!="$0"),]
 
 #alternate
-#library("xlsx", lib.loc="/Library/Frameworks/R.framework/Versions/3.0/Resources/library")
-#bronx1<-read.xlsx("<SOMEWHERE>/rollingsales_bronx.xls",pattern="BOROUGH",stringsAsFactors=FALSE,sheetIndex=1,startRow=5,header=TRUE)
+# library("xlsx", lib.loc="/Library/Frameworks/R.framework/Versions/3.0/Resources/library")
+# bronx1<-read.xlsx("rollingsales_bronx.xls",pattern="BOROUGH",stringsAsFactors=FALSE,sheetIndex=1,startRow=5,header=TRUE)
 View(bronx1)
 #
 attach(bronx1) # If you choose to attach, leave out the "data=." in lm regression
