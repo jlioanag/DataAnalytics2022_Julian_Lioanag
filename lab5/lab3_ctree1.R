@@ -24,7 +24,9 @@ cforest(
 library(tree)
 tr <- tree(Species ~ ., data = iris)
 tr
+
 tr$frame
 plot(tr)
 text(tr)
 #find "prettier" ways to plot the tree
+
