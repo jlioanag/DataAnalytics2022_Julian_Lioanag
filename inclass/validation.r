@@ -22,3 +22,8 @@ for (i in 1:10) {
     cv_error_10[i] <- cv.glm(Auto, glm_fit, K = 10) $delta[1]
 }
 cv_error_10
+
+train <- sample(392, 196)
+lm.fit <- lm(mpg ~ horsepower, data = Auto, subset = train)
+attach(Auto)
+mean((mpg - predict(lm.fit, Auto))[-train]^2)
